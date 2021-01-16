@@ -83,4 +83,14 @@ ReactDom.render(<Greeting/>, document.getElementById('root'));
 
 This will now show-up on the browser window.
 
-This is called as a 'Stateless Functional Component' Or 'Dumb Component' as it does not have anything to do with 'States'.
+This is called as a 'Stateless Functional Component' Or 'Dumb Component' as it does not have anything to do with 'States'. This will ALWAYS return JSX.
+
+## JSX Rules
+
+JSX is kinda like HTML but not entirely HTML.
+
+While returning a JSX from a dumb component, you've to make sure that the entire thing is wrapped into a single element, like a single div tag.
+
+1. Instead of creating lots of div tags, use proper semantics like article, section, etc.
+2. Instead of using 'class' use 'className' for defining the class of a tag.
+3. Must close every element (tag)
