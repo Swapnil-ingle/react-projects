@@ -1,4 +1,4 @@
-# [React Fundamental Course]https://www.youtube.com/watch?v=4UZrsTqkcW4&ab_channel=freeCodeCamp.org)
+# [React Fundamental Course](https://www.youtube.com/watch?v=4UZrsTqkcW4&ab_channel=freeCodeCamp.org)
 
 To get started with React, need the following softwares:
 
