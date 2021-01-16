@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f1dfd1;
+  background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.booklist {
+  background-color: #659157;
+  border-radius: 3px;
+  display: grid;
+  gap: 2rem;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.book {
+  color: ivory;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.book * {
+  padding: 0.5rem;
+}
+
+.book img {
+  border-radius: 15px;
+}
+
+.book h1 {
+  font-size: 2rem;
+}
+
+.book small {
+  font-weight: lighter;
+  color: black;
+}
+
+.book h3 {
+  font-size: 1rem;
+  color: black;
+}
