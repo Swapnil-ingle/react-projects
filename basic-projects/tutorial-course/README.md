@@ -42,3 +42,40 @@ You can run the newly created application with `npm start` command. This will st
 Run `npm run build` and this will create a 'build' folder which has all the minified code and dependencies. You can use this to build folder and run it on your prod-server.
 
 For ex; you can drag-and-drop the build folder on netlify.com to host your own React app there.
+
+## Clean-up the bioler-plate code
+
+`create-react-app` command adds very much boiler plate code to your directory. You'll need to clear almost all the files except index.js.
+
+## Creating first component
+
+In React everything is a component, and you can reuse components in many different pages (Which are made up of diff components themselves).
+
+To create a component we need to create a function in 'index.js' file which has a capitalized name (**It won't work otherwise**)
+
+This function must return JSX (will discuss later).
+
+```JS
+import React from 'react'; 
+
+function Greeting() {
+    return <h4>This is my first React component!</h4>;
+}
+```
+
+The above code will create a Greeting() component. However, we need to "inject" this component somewhere, right?
+
+So we will inject it under the `div` where `id = 'root'`.
+
+```JS
+import React from 'react'; 
+import ReactDom from 'react-dom';
+
+function Greeting() {
+    return <h4>This is my first React component!</h4>;
+}
+
+ReactDom.render(<Greeting/>, document.getElementById('root'));
+```
+
+This will now show-up on the browser window.
