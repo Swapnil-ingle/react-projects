@@ -13,12 +13,15 @@ This will create a package.json file, which has all the dependencies.
 ## To add a new package
 
 ### Install package locally (default) and add to package.json
+
 `npm install <package-name> --save`
 
 ### Install package globally (access anywhere) requires SUDO
+
 `npm isntall <package-name> -g`
 
 ### Use it only in development
+
 `npm install <package-name> --save-dev`
 
 #### Note (How to clone and use on new machines)
@@ -56,7 +59,7 @@ To create a component we need to create a function in 'index.js' file which has 
 This function must return JSX (will discuss later).
 
 ```JS
-import React from 'react'; 
+import React from 'react';
 
 function Greeting() {
     return <h4>This is my first React component!</h4>;
@@ -68,7 +71,7 @@ The above code will create a Greeting() component. However, we need to "inject" 
 So we will inject it under the `div` where `id = 'root'`.
 
 ```JS
-import React from 'react'; 
+import React from 'react';
 import ReactDom from 'react-dom';
 
 function Greeting() {
@@ -79,3 +82,5 @@ ReactDom.render(<Greeting/>, document.getElementById('root'));
 ```
 
 This will now show-up on the browser window.
+
+This is called as a 'Stateless Functional Component' Or 'Dumb Component' as it does not have anything to do with 'States'.
