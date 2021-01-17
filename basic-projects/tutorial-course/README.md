@@ -94,3 +94,12 @@ While returning a JSX from a dumb component, you've to make sure that the entire
 1. Instead of creating lots of div tags, use proper semantics like article, section, etc.
 2. Instead of using 'class' use 'className' for defining the class of a tag.
 3. Must close every element (tag)
+
+## Host your React application online for free
+
+### Steps
+
+1. Sign up on Netlify.com
+2. Go to 'Sites'
+3. Create a prod-build of your React App (`npm start build`). This will create a build folder
+4. Drap-and-drop the 'build' folder in the 'Sites' tab (Step #2)
