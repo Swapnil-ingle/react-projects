@@ -49,9 +49,21 @@ const Book = (props) => {
         <small>by</small>
         <h3>{book.author}</h3>
       </section>
-      <button onClick={clickHandler}>Click Me!</button>
+      <button onClick={clickHandlerFunction}>Click Me!</button>
+      <button onClick={() => clickHandlerComplexExampleFunction(book.author)}>
+        Complex Example!
+      </button>
     </article>
   );
 };
+
+function clickHandlerComplexExampleFunction(author) {
+  console.log(author);
+}
+
+function clickHandlerFunction(e) {
+  alert("Click Handler Function!");
+  console.log(e.target);
+}
 
 ReactDom.render(<BookList />, document.getElementById("root"));
