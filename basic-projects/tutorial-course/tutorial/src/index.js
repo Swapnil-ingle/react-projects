@@ -36,6 +36,11 @@ function BookList() {
 
 const Book = (props) => {
   const book = props.book;
+
+  const clickHandler = () => {
+    alert("Button Clicked!");
+  };
+
   return (
     <article className="book">
       <img src={book.imgSrc} alt="book-cover" />
@@ -44,6 +49,7 @@ const Book = (props) => {
         <small>by</small>
         <h3>{book.author}</h3>
       </section>
+      <button onClick={clickHandler}>Click Me!</button>
     </article>
   );
 };
