@@ -103,3 +103,83 @@ While returning a JSX from a dumb component, you've to make sure that the entire
 2. Go to 'Sites'
 3. Create a prod-build of your React App (`npm start build`). This will create a build folder
 4. Drap-and-drop the 'build' folder in the 'Sites' tab (Step #2)
+
+## React Advanced
+
+### useState Hook
+
+Say we have a title in a `<div>` that we need to set something else on a button click.
+
+```JS
+import React from "react";
+
+const ErrorExample = () => {
+  const title = "Random Title";
+
+  const changeTitle = () => {
+    title = "New Title";
+  };
+
+  return (
+    <React.Fragment>
+      <h2>{title}</h2>
+      <button className="btn" onClick={changeTitle}>
+        Change Title
+      </button>
+    </React.Fragment>
+  );
+};
+
+export default ErrorExample;
+```
+
+Here, even after the button click the Title is not going to change in the UI, It will be different if you `console.log()` it.
+
+This is because although the variable value has changed we're not re-rendering the said `<React.Fragment>` section, and it will continue to display the older value.
+
+To overcome this, we can use the `useState()` hook.
+
+When we use `useState()` function it returns an array[2] and it has ['value', 'handlerFunction'].
+
+To summarize this in one statement, use the `useState()` method to set a 'value' and define a 'setValue' function and whenever you change this 'value' with the 'setValue' function it will re-render the UI view as well.
+
+**The below example will work to change the Title for which we failed previously:**
+
+```JS
+import React, { useState } from "react";
+
+const UseStateBasics = () => {
+  const [text, setText] = useState("Hello World!");
+  // 1. useState responds with passed value and it's handler function
+  // 2. We assign the value and it's handlerFunction to text and setText respectively.
+  // 3. We use the {text} value in the <React.Fragment> section
+  // 4. We use the setText() function to change the {text} variables value.
+  // 5. The invocation of the setText() function is a "hook" to re-render the UI component with the updated value
+
+  const handleClick = () => {
+    if (text == "Hello World!") {
+      setText("Alternate Title!");
+    } else {
+      setText("Hello World!");
+    }
+  };
+
+  return (
+    <React.Fragment>
+      <h1>{text}</h1>
+      <button className="btn" onClick={handleClick}>
+        Change Title
+      </button>
+    </React.Fragment>
+  );
+};
+
+export default UseStateBasics;
+```
+
+### Some React Hook Rules
+
+1. Every React Hook is prefixed by the keyword 'use'.
+2. **VIMP** The component in which you use a hook MUST be uppercase.
+3. Must be in a function/component body (and not defined globally)
+4. We cannot call a Hook conditionally. (For ex; in the above useState hook, it'll always get called when we change the value using 'setText()' method.
