@@ -183,3 +183,15 @@ export default UseStateBasics;
 2. **VIMP** The component in which you use a hook MUST be uppercase.
 3. Must be in a function/component body (and not defined globally)
 4. We cannot call a Hook conditionally. (For ex; in the above useState hook, it'll always get called when we change the value using 'setText()' method.
+
+### useEffect Hook
+
+This hook is used to change any state that is outside of the component.
+
+For example, a button that changes the document title, signing up for subscription, adding an event listener, fetching data, etc.
+
+useEffect = Work outside of the component
+
+#### When does it run?
+
+useEffect runs after every re-render
