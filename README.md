@@ -9,7 +9,8 @@ These are the projects based on new topics that I learned.
 ## Birthday Reminder App
 
 [Click here to Interact](https://si-birthday-reminder.netlify.app/)
-A very basic app that displays birthdays from an array-list with a 'clear all' button.
+
+**Info:** A very basic app that displays birthdays from an array-list with a 'clear all' button.
 
 ### Learning Topic Engaged
 
