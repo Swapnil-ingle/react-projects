@@ -236,3 +236,71 @@ const App = () => {
 
 export default App;
 ```
+
+#### Dependency list array in useEffect
+
+Remember that we said useEffect will run EVERYTIME the component is re-rendered?
+
+Welllllll...
+
+This is a bit binding, what if you want to run useEffect only when a certain var (or any one from a list of vars) is updated?
+
+This way you could setup multiple useEffects - having diff implementations - that will be triggered based on various var change.
+
+Pass the list of variables as the second parameter to the useEffect and it will be triggered only when value of one of the vars passed changes.
+
+```JS
+import React from "react";
+
+const App = () => {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (value >= 1) {
+      console.log("Call useEffect!");
+    }
+  }, [value]); // value from useState() mentioned above
+
+  // Your code goes here...
+}
+```
+
+### useEffect cleanup function
+
+So, useEffect will basically run everytime a component is (re)rendered.
+
+What if, we're adding an eventListener using useEffect, each time the component is rendered it'll add a new EventListener. This'll cause a memory-leak in the long run.
+
+This is where the cleanUp function of a useEffect comes in play, with the cleanUp function you can clean up the previously added eventListener (or any other resource).
+
+Clean up function will run from the second time the components are re-rendered and it runs before the useEffect (Remember from second time)
+
+Ex:
+
+```JS
+const UseEffectCleanup = () => {
+  console.log("Everything is compiled!");
+  const [size, setSize] = useState(window.innerWidth);
+
+  const checkSize = () => {
+    setSize(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", checkSize);
+    return () => {
+      console.log("Cleaning Up...");
+      window.removeEventListener("resize", checkSize);
+    };
+  }, [size]);
+
+  return (
+    <>
+      <h1>window</h1>
+      <h2>{size} Pixels</h2>
+    </>
+  );
+};
+
+export default UseEffectCleanup;
+```
