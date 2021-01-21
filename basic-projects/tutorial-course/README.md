@@ -192,6 +192,47 @@ For example, a button that changes the document title, signing up for subscripti
 
 useEffect = Work outside of the component
 
+useEffect is defined as a callback function.
+
+```JS
+import React from "react";
+
+const App = () => {
+  useEffect(() => {
+    console.log("Call useEffect!");
+  });
+
+  // Your code goes here...
+}
+
+export default App;
+```
+
 #### When does it run?
 
-useEffect runs after every re-render
+The useEffect hook runs after every re-render.
+
+### useEffect conditional
+
+Remember, we cannot call a hook conditionally.
+
+To get around this, we can use conitional statements inside the hook.
+
+For ex;
+
+```JS
+import React from "react";
+
+const App = () => {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (value >= 1) {
+      console.log("Call useEffect!");
+    }
+  });
+
+  // Your code goes here...
+}
+
+export default App;
+```
