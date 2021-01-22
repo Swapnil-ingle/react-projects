@@ -346,8 +346,8 @@ Given below is a short summary.
 
 ### Short circuit AND
 
-In an AND expression if **first value is true** then **second value** will be evaluated.
-In an AND expression if **first value is false** then **NOTHING** will be evaluated.
+- In an AND expression if **first value is true** then **second value** will be evaluated.
+- In an AND expression if **first value is false** then **NOTHING** will be evaluated.
 
 #### Example
 
@@ -367,8 +367,8 @@ const value = text && "Hello World!"
 
 ### Short circuit OR
 
-In an OR expression if **first value is true** then **first value** will be evaluated.
-In an OR expression if **first value is false** then **second value** will be evaluated.
+- In an OR expression if **first value is true** then **first value** will be evaluated.
+- In an OR expression if **first value is false** then **second value** will be evaluated.
 
 #### Example
 
