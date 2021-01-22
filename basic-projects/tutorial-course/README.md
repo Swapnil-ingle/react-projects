@@ -304,3 +304,36 @@ const UseEffectCleanup = () => {
 
 export default UseEffectCleanup;
 ```
+
+### Fetch data using useEffect
+
+To fetch data using useEffect, you can call the data-fetching function in the useEffect first param.
+
+**Note:** Most probably, the data-fetching function is going to be using `async` and `await`, and we cannot have that directly in the useEffect() function. So create a new function and call it from useEffect.
+
+For ex;
+
+```JS
+import React, {useState, useEffect} from "react";
+
+const App = () => {
+  const [users, setUsers] = useState([]);
+
+  const getUsers = async () => {
+    const response = await fetch("https://api.github.com/users");
+    const users = await response.json();
+    setUsers(users);
+  };
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
+  // The second param makes sure this is rendered only one time.
+  // This will stop the getUsers() from calling infinitely.
+
+  // Code where it renders the 'users' variable
+};
+
+export default App;
+```
