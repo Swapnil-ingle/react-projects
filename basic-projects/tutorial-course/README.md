@@ -337,3 +337,51 @@ const App = () => {
 
 export default App;
 ```
+
+## Short Circuit Operators
+
+It is important to know short-circuit operators as we're going to use them to conditionally show/hide (render) different `<div>` of a component.
+
+Given below is a short summary.
+
+### Short circuit AND
+
+In an AND expression if **first value is true** then **second value** will be evaluated.
+In an AND expression if **first value is false** then **NOTHING** will be evaluated.
+
+#### Example
+
+1. This will evaluate to ""
+
+```JS
+const text = '';
+const value = text && "Hello World!"
+```
+
+2. This will evaluate to "Hello World";
+
+```JS
+const text = 'Has a value';
+const value = text && "Hello World!"
+```
+
+### Short circuit OR
+
+In an OR expression if **first value is true** then **first value** will be evaluated.
+In an OR expression if **first value is false** then **second value** will be evaluated.
+
+#### Example
+
+1. This will evaluate to "John Doe"
+
+```JS
+const text = 'John Doe';
+const value = text || "Harry Potter"
+```
+
+2. This will evaluate to "Harry Potter";
+
+```JS
+const text = '';
+const value = text && "Harry Potter"
+```
