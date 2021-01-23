@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+header {
+  margin: 2rem 0;
+  color: #192a56;
+}
+
+.container {
+  border-radius: 5px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+  background-color: #f1f2f6;
+  width: 80vw;
+  max-width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.underline {
+  margin-left: auto;
+  margin-right: auto;
+  height: 2px;
+  width: 75%;
+  opacity: 80%;
+  background-color: #192a56;
+  border-radius: 10px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  color: #192a56;
+}
+
+.img-container {
+  position: relative;
+}
+
+.quote {
+  color: ivory;
+  background-color: seagreen;
+  padding: 3px;
+  border-radius: 50%;
+  width: 1.5rem;
+  padding: 0.2rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-left-quote {
+  position: absolute;
+  top: 0;
+  left: -8px;
+}
+
+.img-right-quote {
+  position: absolute;
+  bottom: 0;
+  right: -8px;
+}
+
+.review img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 2px 3px 0px seagreen;
+}
+
+.review p {
+  font-size: 0.5rem;
+}
+
+.review h3 {
+  font-size: 1rem;
+}
+
+#person-job {
+  font-size: 0.8rem;
+  color: seagreen;
+}
+
+.scrollbar {
+  position: absolute;
+  width: 90%;
+  height: 2rem;
+  bottom: -25px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.scrollbar button {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: ivory;
+}
+
+.scroll-btn {
+  box-shadow: 2px 2px 0px black;
+}
+
+.scroll-btn:hover,
+.scrollbar button:hover {
+  cursor: pointer;
+  background-color: goldenrod;
+}
