@@ -36,3 +36,19 @@ All the projects are hosted on netlify.com free hosting.
 5. Loading component rendering
 
 [Click here to Interact](https://si-tours-app.netlify.app/)
+
+## Review Display App
+
+[Click here to Interact](https://si-review-display.netlify.app/)
+
+**Info:** A basic review scroller app that allows user to scroll-through different reviews, or see random review.
+
+### Learning Topic Engaged
+
+1. Hooks (useState) --> To save the state of the tours.
+2. Hooks (useEffect) --> To fetch the data from public API.
+3. Props-Drilling
+4. Show/Hide Component to show/hide divs
+5. Loading component rendering
+
+[Click here to Interact](https://si-review-display.netlify.app/)
