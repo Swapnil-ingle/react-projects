@@ -6,6 +6,8 @@ Started with learning React.
 
 These are the projects based on new topics that I learned.
 
+All the projects are hosted on netlify.com free hosting.
+
 ## Birthday Reminder App
 
 [Click here to Interact](https://si-birthday-reminder.netlify.app/)
@@ -18,3 +20,19 @@ These are the projects based on new topics that I learned.
 2. Iterating over an array and rendering `<div>` for each element.
 
 [Click here to Interact](https://si-birthday-reminder.netlify.app/)
+
+## Tours App
+
+[Click here to Interact](https://si-tours-app.netlify.app/)
+
+**Info:** A basic tours app that displays various tours from an array-list fetched from public API, and let's the user remove tours.
+
+### Learning Topic Engaged
+
+1. Hooks (useState) --> To save the state of the tours.
+2. Hooks (useEffect) --> To fetch the data from public API.
+3. Props-Drilling
+4. Show/Hide Component to show/hide divs
+5. Loading component rendering
+
+[Click here to Interact](https://si-tours-app.netlify.app/)
