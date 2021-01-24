@@ -8,7 +8,7 @@ const Container = () => {
         <h3>Questions And Answer</h3>
         <span>About Login</span>
       </section>
-      <section className="qna-questions">
+      <section className="qna-questions scrollbar-hidden">
         <Questions />
       </section>
     </div>

@@ -10,7 +10,7 @@ const Questions = () => {
 
         return (
           <>
-            <div className="qna scrollbar-hidden" key={id}>
+            <div className="qna" key={id}>
               <Question question={question} answer={answer} />
             </div>
           </>
