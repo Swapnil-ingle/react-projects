@@ -31,10 +31,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .btn {
-  margin: 0 0.7rem;
+  margin: 0.2rem 0.7rem;
   padding: 0.4rem 1.3rem;
   border: none;
   background-color: #c59d5f;
@@ -69,24 +70,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #c59c5f49;
+  background-color: #c59c5f10;
   border-radius: 5px;
   padding: 0.5rem;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-.menu-item section {
-  max-width: 80%;
-  /* overflow: hidden; */
-}
-
-.menu-item-img img {
-  height: 180px;
-  object-fit: cover;
-}
-
-.item-info {
-  margin-left: 0.5rem;
+.photo {
+  width: 100%;
+  border: 5px #c59d5f solid;
 }
 
 .price {
@@ -102,4 +94,12 @@ body {
 .item-info p {
   font-weight: lighter;
   padding-top: 0.5rem;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 90%;
+  margin-left: 0.5rem;
 }
