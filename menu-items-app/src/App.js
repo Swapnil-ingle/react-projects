@@ -1,38 +1,58 @@
 import "./App.css";
+import { useState, useEffect } from "react";
+import BtnContainers from "./BtnContainers";
+import data from "./data";
+import MenuItems from "./MenuItems";
 
 function App() {
+  const [menu, setMenu] = useState(data);
+  const categories = [];
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  menu.forEach((item) => {
+    const category = {
+      id: item.id,
+      category: item.category,
+    };
+
+    let alreadyPresent = false;
+
+    categories.forEach((category) => {
+      if (category.category === item.category) {
+        alreadyPresent = true;
+      }
+    });
+
+    if (!alreadyPresent) {
+      categories.push(category);
+    }
+  });
+
+  useEffect(() => {
+    const btnElements = document.getElementsByClassName("btn");
+    for (let i = 0; i < btnElements.length; i++) {
+      const currBtnEl = btnElements[i];
+      currBtnEl.innerText === activeCategory
+        ? currBtnEl.classList.add("active-btn")
+        : currBtnEl.classList.remove("active-btn");
+    }
+  }, [activeCategory]);
+
   return (
     <main className="App">
       <div className="title">
         <h2>Our Menu</h2>
         <div className="underline"></div>
       </div>
-      <div className="btn-containers">
-        <button className="btn">All</button>
-        <button className="btn">Breakfast</button>
-        <button className="btn">Lunch</button>
-      </div>
-      <div className="menu-items">
-        <article className="menu-item">
-          <section className="menu-item-img">
-            <img
-              className="photo"
-              src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGZvb2R8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-              alt=""
-            />
-          </section>
-          <div className="item-info">
-            <header>
-              <h3>Food Item 1</h3>
-              <h4 className="price">$10</h4>
-            </header>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Possimus, aliquam.
-            </p>
-          </div>
-        </article>
-      </div>
+      <BtnContainers
+        categories={categories}
+        setActiveCategory={setActiveCategory}
+      />
+      <MenuItems
+        activeCategory={activeCategory}
+        setMenu={setMenu}
+        menu={menu}
+      />
     </main>
   );
 }
