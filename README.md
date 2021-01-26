@@ -68,3 +68,22 @@ All the projects are hosted on netlify.com free hosting.
 5. Loading component rendering
 
 [Click here to Interact](https://si-accordion-questions.netlify.app/)
+
+## Menu Item App
+
+[Click here to Interact](https://si-menu-items.netlify.app/)
+
+**Info:** A basic menu-item app that allows user to filter the menu based on the selected category of food.
+
+The categories are also dynamically generated from categories based in the data.js file.
+
+### Learning Topic Engaged
+
+1. Hooks (useState) --> To save the state of the tours.
+2. Hooks (useEffect) --> To fetch the data from public API.
+3. Props-Drilling
+4. Show/Hide Component to filter the menu-items are per the food category
+5. Loading component rendering
+6. Manipulating DOM model to show active category button.
+
+[Click here to Interact](https://si-menu-items.netlify.app/)
