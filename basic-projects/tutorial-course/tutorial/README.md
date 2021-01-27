@@ -68,3 +68,48 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Forms: Controller Inputs
+
+To setup forms in React you need to remember that:
+
+1. All the inputs from the form should be maintained in a state (useState)
+2. Whenever the value of the input changes it should use `onChange` method which invokes the `setNewState` of the `useState` to keep the state value up to date.
+3. The `form` or the submit button can have the `onSubmit={function}` tag which will get invoked when you submit the form
+
+See below for an example form:
+
+```JS
+import React, { useState } from "react";
+
+const ControlledInputs = () => {
+  const [firstName, setFirstName] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(firstName);
+  };
+
+  return (
+    <>
+      <article>
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="form-control">
+            <label htmlFor="firstName">First Name: </label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </div>
+          <button type="submit">Add Person</button>
+        </form>
+      </article>
+    </>
+  );
+};
+
+export default ControlledInputs;
+```
