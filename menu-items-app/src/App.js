@@ -1,32 +1,12 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import BtnContainers from "./BtnContainers";
-import data from "./data";
+import menu from "./data";
 import MenuItems from "./MenuItems";
 
 function App() {
-  const [menu, setMenu] = useState(data);
-  const categories = [];
+  const categories = [...new Set(menu.map((item) => item.category))];
   const [activeCategory, setActiveCategory] = useState("All");
-
-  menu.forEach((item) => {
-    const category = {
-      id: item.id,
-      category: item.category,
-    };
-
-    let alreadyPresent = false;
-
-    categories.forEach((category) => {
-      if (category.category === item.category) {
-        alreadyPresent = true;
-      }
-    });
-
-    if (!alreadyPresent) {
-      categories.push(category);
-    }
-  });
 
   useEffect(() => {
     const btnElements = document.getElementsByClassName("btn");
@@ -48,11 +28,7 @@ function App() {
         categories={categories}
         setActiveCategory={setActiveCategory}
       />
-      <MenuItems
-        activeCategory={activeCategory}
-        setMenu={setMenu}
-        menu={menu}
-      />
+      <MenuItems activeCategory={activeCategory} menu={menu} />
     </main>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const MenuItems = ({ activeCategory, setMenu, menu }) => {
+const MenuItems = ({ activeCategory, menu }) => {
   return (
     <div className="menu-items">
       {menu.map((item) => {

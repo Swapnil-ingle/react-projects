@@ -1,19 +1,22 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const BtnContainers = ({ categories, setActiveCategory }) => {
+  let i = 0;
+
   return (
     <div className="btn-containers">
       <button className="btn" onClick={() => setActiveCategory("All")}>
         All
       </button>
       {categories.map((category) => {
+        i++;
         return (
           <button
-            key={category.id}
+            key={i}
             className="btn"
-            onClick={() => setActiveCategory(category.category)}
+            onClick={() => setActiveCategory(category)}
           >
-            {category.category}
+            {category}
           </button>
         );
       })}
