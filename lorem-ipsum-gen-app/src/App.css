@@ -71,7 +71,7 @@ body {
   margin: 1rem 0;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .App {
     width: 100vw;
   }
