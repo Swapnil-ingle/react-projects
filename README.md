@@ -110,6 +110,7 @@ The categories are also dynamically generated from categories based in the data.
 
 1. Dynamic styling
 2. Error handling
-3. Timeout notifications
+3. 'n' seconds timeout notifications
+4. Copying to clipboard
 
 [Click here to Interact](https://si-color-generator.netlify.app/)
