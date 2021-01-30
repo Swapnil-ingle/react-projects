@@ -88,7 +88,7 @@ The categories are also dynamically generated from categories based in the data.
 
 [Click here to Interact](https://si-menu-items.netlify.app/)
 
-## Menu Item App
+## Lorem Generator App
 
 [Click here to Interact](https://si-lorem-generator.netlify.app/)
 
@@ -99,3 +99,17 @@ The categories are also dynamically generated from categories based in the data.
 1. Manipulation of Forms in React
 
 [Click here to Interact](https://si-lorem-generator.netlify.app/)
+
+## Color Generator App
+
+[Click here to Interact](https://si-color-generator.netlify.app/)
+
+**Info:** A color generator that generators tints and shades of a color.
+
+### New Learning Topic Engaged
+
+1. Dynamic styling
+2. Error handling
+3. Timeout notifications
+
+[Click here to Interact](https://si-color-generator.netlify.app/)
