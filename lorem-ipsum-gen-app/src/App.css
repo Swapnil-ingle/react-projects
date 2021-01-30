@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(46, 139, 86, 0.404);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 80vw;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.form-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 1rem;
+}
+
+.form-control input {
+  margin-left: 1rem;
+  max-width: 3rem;
+  height: 1.5rem;
+}
+
+.btn {
+  width: 200px;
+  margin: 0.5rem auto;
+  padding: 0.5rem 2rem;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  background-color: seagreen;
+  color: ivory;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: rgba(0, 255, 128, 0.63);
+  cursor: pointer;
+}
+
+.paragraphs {
+  max-width: 50%;
+}
+
+.paragraphs p {
+  margin: 1rem 0;
+}
+
+@media screen and (max-width: 400px) {
+  .App {
+    width: 100vw;
+  }
+
+  .paragraphs {
+    max-width: 95%;
+  }
+}
