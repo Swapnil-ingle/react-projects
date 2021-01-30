@@ -87,3 +87,15 @@ The categories are also dynamically generated from categories based in the data.
 6. Manipulating DOM model to show active category button.
 
 [Click here to Interact](https://si-menu-items.netlify.app/)
+
+## Menu Item App
+
+[Click here to Interact](https://si-lorem-generator.netlify.app/)
+
+**Info:** A basic Lorem generator that generators Lorem text paragraphs taking the number from the user.
+
+### New Learning Topic Engaged
+
+1. Manipulation of Forms in React
+
+[Click here to Interact](https://si-lorem-generator.netlify.app/)
