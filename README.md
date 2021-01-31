@@ -114,3 +114,17 @@ The categories are also dynamically generated from categories based in the data.
 4. Copying to clipboard
 
 [Click here to Interact](https://si-color-generator.netlify.app/)
+
+## Grocery List App
+
+[Click here to Interact](https://si-grocery-list.netlify.app/)
+
+**Info:** A simple grocery list app that lets user to add, remove, edit the items.
+
+### New Learning Topic Engaged
+
+1. Showing notification of diff type based on the error type
+2. Saving the items to Local storage
+3. Editing/removing items in array by id.
+
+[Click here to Interact](https://si-grocery-list.netlify.app/)
