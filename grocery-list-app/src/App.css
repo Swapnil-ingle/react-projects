@@ -20,7 +20,7 @@ body {
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 5px 5px 10px 2px #002e2c88;
-  min-width: 50vw;
+  width: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,6 +45,11 @@ body {
   font-size: 1rem;
 }
 
+.form-container button:hover {
+  cursor: pointer;
+  background-color: #e77b5a;
+}
+
 .form-container input {
   padding-left: 10px;
   height: 2rem;
@@ -55,10 +60,16 @@ body {
 }
 
 .item {
+  margin-top: 8px;
   font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #e4572e;
+}
+
+.item small {
+  padding-left: 10px;
 }
 
 .item button {
@@ -67,18 +78,69 @@ body {
   background-color: transparent;
   font-size: 1.2rem;
   border-radius: 3px;
+  outline: none;
 }
 
 .edit-btn {
   color: greenyellow;
 }
 
+.edit-btn:hover {
+  color: teal;
+}
+
 .delete-btn {
   color: firebrick;
+}
+
+.delete-btn:hover {
+  color: #e4572e;
 }
 
 .edit-btn:hover,
 .delete-btn:hover {
   cursor: pointer;
-  background-color: ;
+}
+
+.item-ud {
+  padding-right: 10px;
+}
+
+.alert {
+  text-align: center;
+  width: 90%;
+  padding: 0.3rem 0;
+}
+
+.alert h3 {
+  font-size: 0.8rem;
+}
+
+.alert-warning {
+  color: black;
+  background-color: goldenrod;
+}
+
+.alert-error {
+  color: ivory;
+  background-color: firebrick;
+}
+
+.alert-info {
+  color: black;
+  background-color: turquoise;
+}
+
+.clear-all-btn {
+  margin-top: 1rem;
+  padding: 0.4rem 1.3rem;
+  background-color: firebrick;
+  color: ivory;
+  border: none;
+  border-radius: 3px;
+}
+
+.clear-all-btn:hover {
+  cursor: pointer;
+  background-color: red;
 }
