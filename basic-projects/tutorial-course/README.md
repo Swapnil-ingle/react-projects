@@ -385,3 +385,51 @@ const value = text || "Harry Potter"
 const text = '';
 const value = text && "Harry Potter"
 ```
+
+## React Hook: useRef
+
+useRef hook is similar to the useState hook, the only difference is that it DOES NOT trigger the re-render of the page.
+
+1. It preserves values between render
+2. It DOES NOT trigger the re-render of the page (unlike useState)
+3. The main use-case if to target DOM nodes/elements
+
+**Note:** The useRef hook will be triggered when submit button in form is clicked.
+
+1. The ref value will resolve to the tag on which you can manipulate using DOM.
+2. Or it will be resolved to the input value.
+
+Setting up a useRef hook:
+
+```JS
+import React, { useEffect, useRef } from "react";
+
+const UseRefBasics = () => {
+  const refContainer = useRef(null);
+  const divContainer = useRef(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(refContainer.current.value); // Resolves to input value
+    console.log(divContainer.current); // Resolves to div tag
+  };
+
+  console.log(refContainer);
+  console.log(divContainer);
+
+  return (
+    <>
+      <form className="form" onSubmit={handleSubmit}>
+        <div>
+          <input type="text" ref={refContainer} />
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      <div ref={divContainer}>Hello World!</div>
+    </>
+  );
+};
+
+export default UseRefBasics;
+
+```
