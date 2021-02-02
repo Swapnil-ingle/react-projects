@@ -431,5 +431,30 @@ const UseRefBasics = () => {
 };
 
 export default UseRefBasics;
+```
+
+## React Hook: useReducer
+
+### Prerequisite
+
+When your project gets more and more complicated and you want to loosely coupled parts, where each part is a subfolder having index.js (primary file which binds everything together) and other helping parts.
+
+For ex, we can have:
 
 ```
+src/ --> index.js ()
+      |
+      |--> sidebar/
+            |
+            |--> Index.js (Uses SideBarHeader and SideBarList JS files)
+            |--> SideBarHeader.js
+            |--> SideBarList.js
+```
+
+Here, the index.js will only import the `import {Sidebar} from ./sidebar` and can use `<Sidebar/>` component directly.
+
+No need to separately import every other component.
+
+### useReducer
+
+We use useReducer to change states, as app become more complex you need a proper protocol to changing states. This protocol is usually followed by everyone in the team.
