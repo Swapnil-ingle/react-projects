@@ -458,3 +458,34 @@ No need to separately import every other component.
 ### useReducer
 
 We use useReducer to change states, as app become more complex you need a proper protocol to changing states. This protocol is usually followed by everyone in the team.
+
+Every var should be in a single object - conventionally called as state - and every change to these state is done via action called as dispatch.
+
+```JS
+import React, { useReducer } from "react";
+
+const reducer = (state, action) => {}; // Reducer should have these two variables 'state, action'
+
+const defaultState = {
+  people: [],
+  isModalOpen: false,
+  modalContent: "",
+};
+
+const Index = () => {
+  const [state, dispatch] = useReducer(reducer, defaultState);
+}
+```
+
+#### Explaining the useReducer() function line
+
+```JS
+const [state, dispatch] = useReducer(reducer, defaultState);
+```
+
+> 1. The `state` variable is the object which has all the variables needed for that React component.
+> 2. The `defaultState` is the default state which will have all the variables in their default value.
+> 3. The `dispatch` should be called whenever the user wants to change the variables in state. The `dispatch` should be called with `dispatch({type: '<ACTION_NAME>'})`,
+> 4. The `reducer` is a user-defined function which gets invoked when the `dispatch` method is called from React component. The `reducer` function should have two parameters `state, action`.
+>    > The `reducer` function should ALWAYS return `state` or else the component won't work.
+>    > The `reducer` function will perform different actions depending upon the action (`{type: '<ACTION_NAME>'}`) passed in `dispatch` invocation.
