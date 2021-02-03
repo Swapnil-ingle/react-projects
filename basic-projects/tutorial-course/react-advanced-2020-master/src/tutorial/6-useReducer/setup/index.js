@@ -2,12 +2,28 @@ import React, { useState, useReducer, useRef } from "react";
 import Modal from "./Modal";
 import { data } from "../../../data";
 // reducer function
-const reducer = (state, action) => {};
+const reducer = (state, action) => {
+  console.log(state, action);
+
+  if (action.type === "ADD_ITEM") {
+    const newItems = [...state.people, action.payload];
+    return {
+      ...state,
+      people: newItems,
+      isModalOpen: true,
+      modalContent: "Item Added!",
+    };
+  } else if (action.type === "NO_VALUE") {
+    return { ...state, isModalOpen: true, modalContent: "Please enter value!" };
+  }
+
+  throw new Error("No Matching Action Type!");
+};
 
 const defaultState = {
   people: [],
   isModalOpen: false,
-  modalContent: "Hello World!",
+  modalContent: "",
 };
 
 const Index = () => {
@@ -19,15 +35,18 @@ const Index = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = inputRefContainer.current.value;
-    console.log(name);
     if (name) {
+      const newPeople = { id: new Date().getTime().toString(), name };
+      dispatch({ type: "ADD_ITEM", payload: newPeople });
+      inputRefContainer.current.value = "";
     } else {
+      dispatch({ type: "NO_VALUE" });
     }
   };
 
   return (
     <>
-      {state.isModalOpen && <Modal />}
+      {state.isModalOpen && <Modal modalContent={state.modalContent} />}
       <form onSubmit={handleSubmit} className="form">
         <div>
           <input
