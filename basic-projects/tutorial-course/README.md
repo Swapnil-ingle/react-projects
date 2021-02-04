@@ -484,8 +484,8 @@ const [state, dispatch] = useReducer(reducer, defaultState);
 ```
 
 > 1. The `state` variable is the object which has all the variables needed for that React component.
-> 2. The `defaultState` is the default state which will have all the variables in their default value.
-> 3. The `dispatch` should be called whenever the user wants to change the variables in state. The `dispatch` should be called with `dispatch({type: '<ACTION_NAME>'})`,
+> 2. The `defaultState` is the default state which will have all the `state` variables in their default value.
+> 3. The `dispatch` should be called whenever the user wants to change the variables in state. The `dispatch` should be called with `dispatch({type: '<ACTION_NAME>'})` params.
 > 4. The `reducer` is a user-defined function which gets invoked when the `dispatch` method is called from React component. The `reducer` function should have two parameters `state, action`.
 >    > The `reducer` function should ALWAYS return `state` or else the component won't work.
 >    > The `reducer` function will perform different actions depending upon the action (`{type: '<ACTION_NAME>'}`) passed in `dispatch` invocation.
