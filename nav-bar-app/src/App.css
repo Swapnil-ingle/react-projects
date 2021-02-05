@@ -23,6 +23,7 @@ nav {
   max-height: 100%;
   background-color: slateblue;
   color: ivory;
+  position: relative;
 }
 
 .nav-header {
@@ -64,6 +65,9 @@ nav li:hover {
   background-color: crimson;
   opacity: 1;
   transition: all 0.2s linear;
+  position: absolute;
+  top: 4.2rem;
+  width: 100%;
 }
 
 .nav-links-resp ul li {
@@ -103,4 +107,13 @@ nav li:hover {
 
 .hide {
   opacity: 0;
+}
+
+article {
+  margin: 1.2rem 2.5rem;
+}
+
+article p {
+  font-weight: lighter;
+  padding: 1rem 0;
 }

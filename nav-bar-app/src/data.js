@@ -23,7 +23,7 @@ export const links = [
   {
     id: 2,
     url: "/About",
-    name: "About Us",
+    name: "About",
   },
 ];
 
