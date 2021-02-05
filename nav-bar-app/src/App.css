@@ -14,8 +14,8 @@ body {
 nav {
   padding: 1rem 3rem;
   width: 100%;
-  position: absolute;
-  top: 0;
+  /* position: absolute;
+  top: 0; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -23,6 +23,10 @@ nav {
   max-height: 100%;
   background-color: slateblue;
   color: ivory;
+}
+
+.nav-header {
+  font-style: italic;
 }
 
 nav ul {
@@ -55,6 +59,19 @@ nav li:hover {
   font-weight: bolder;
 }
 
+.nav-links-resp {
+  color: ivory;
+  background-color: crimson;
+  opacity: 1;
+  transition: all 0.2s linear;
+}
+
+.nav-links-resp ul li {
+  text-align: right;
+  padding: 4px 2rem;
+  border-top: 1px solid ivory;
+}
+
 /* Responsive */
 
 @media screen and (max-width: 700px) {
@@ -70,7 +87,6 @@ nav li:hover {
 @media screen and (max-width: 500px) {
   nav {
     background-color: cornflowerblue;
-    display: flex;
   }
 
   .nav-links {
@@ -79,7 +95,12 @@ nav li:hover {
 }
 
 @media screen and (min-width: 500px) {
-  .hamburger-container {
+  .hamburger-container,
+  .nav-links-resp {
     display: none;
   }
+}
+
+.hide {
+  opacity: 0;
 }
