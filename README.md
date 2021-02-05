@@ -128,3 +128,19 @@ The categories are also dynamically generated from categories based in the data.
 3. Editing/removing items in array by id.
 
 [Click here to Interact](https://si-grocery-list.netlify.app/)
+
+## NavBar App
+
+[Click here to Interact](https://si-nav-bar.netlify.app/)
+
+**Info:** A responsive navBar which takes the links and social-links from dynamic data and adds to the UI.
+
+Changes to hamburger for mobile and shows dropdown navBar instead.
+
+### New Learning Topic Engaged
+
+1. useRef for DOM manipulation.
+2. CSS to hide/show based on screen-size (media-query)
+3. CSS transition and animation
+
+[Click here to Interact](https://si-nav-bar.netlify.app/)
