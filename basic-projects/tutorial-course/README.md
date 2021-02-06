@@ -495,3 +495,9 @@ const [state, dispatch] = useReducer(reducer, defaultState);
 > This is not the technical term.
 
 Prop Drilling is done when you have to pass state from one component to other component, given that the component are in a heirarchy where one component is the top and other are the bottom component.
+
+Suppose a function is declared in the first component but has to be used in 5th component down the line, we've to pass it from component1 to component5. Adding verbosity to all the intermediate components.
+
+This is called prop-drilling.
+
+We can avoid this using either useContext hook or Redux (used in much more complex cases).
