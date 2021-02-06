@@ -487,5 +487,12 @@ const [state, dispatch] = useReducer(reducer, defaultState);
 > 2. The `defaultState` is the default state which will have all the `state` variables in their default value.
 > 3. The `dispatch` should be called whenever the user wants to change the variables in state. The `dispatch` should be called with `dispatch({type: '<ACTION_NAME>'})` params.
 > 4. The `reducer` is a user-defined function which gets invoked when the `dispatch` method is called from React component. The `reducer` function should have two parameters `state, action`.
->    > The `reducer` function should ALWAYS return `state` or else the component won't work.
+>    > The `reducer` function should ALWAYS retu`rn `state` or else the component won't work.
 >    > The `reducer` function will perform different actions depending upon the action (`{type: '<ACTION_NAME>'}`) passed in `dispatch` invocation.
+
+## Prop Drilling
+
+> This is not the technical term.
+
+Prop Drilling is done when you have to pass state from one component to other component, given that the component are in a heirarchy where one component is the top and other are the bottom component.
+
