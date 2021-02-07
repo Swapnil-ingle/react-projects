@@ -545,3 +545,35 @@ const Component2() => {
   )
 }
 ```
+
+## React Hooks: Custom Hooks
+
+To reuse a functionality (for ex: fetching of data) the React community has made some some custom hooks that you can directly import into your own project and (re)use their functionality.
+
+You can also create your own custom hook to (re)use the same functionalities across components.
+
+**Note:** Your custom hooks MUST start with _use_ prefix. For ex: useFetch, useFilter, etc.
+
+Ex:
+
+```JS
+import { useState, useEffect } from "react";
+
+export const useFetch = (url) => {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+  const getData = async () => {
+    const response = await fetch(url);
+    const respJSON = await response.json();
+    setData(respJSON);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getData();
+  }, [url]);
+
+  return { loading, data };
+};
+```
