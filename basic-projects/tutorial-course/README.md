@@ -487,8 +487,7 @@ const [state, dispatch] = useReducer(reducer, defaultState);
 > 2. The `defaultState` is the default state which will have all the `state` variables in their default value.
 > 3. The `dispatch` should be called whenever the user wants to change the variables in state. The `dispatch` should be called with `dispatch({type: '<ACTION_NAME>'})` params.
 > 4. The `reducer` is a user-defined function which gets invoked when the `dispatch` method is called from React component. The `reducer` function should have two parameters `state, action`.
->    > The `reducer` function should ALWAYS retu`rn `state` or else the component won't work.
->    > The `reducer` function will perform different actions depending upon the action (`{type: '<ACTION_NAME>'}`) passed in `dispatch` invocation.
+>    > The `reducer` function should ALWAYS retu`rn `state`or else the component won't work. The`reducer` function will perform different actions depending upon the action (`{type: '<ACTION_NAME>'}`) passed in `dispatch` invocation.
 
 ## Prop Drilling
 
@@ -501,3 +500,48 @@ Suppose a function is declared in the first component but has to be used in 5th 
 This is called prop-drilling.
 
 We can avoid this using either useContext hook or Redux (used in much more complex cases).
+
+## React Hook: useContext AND Context API
+
+You can create context with `const newContext = React.createContext();`
+
+Once a context is created you'll have the access to two components **The Provider** and **The Consumer**.
+
+### The Provider
+
+We need to wrap the root component of the tree in a `newContext.Provider` as this will enable the context in all the components down the line.
+
+We need to pass `value` attribute with the Provider, this will persist values in the context to be used later.
+
+Ex:
+
+```JS
+import { useContext } from "react";
+
+// Create a new context
+const newContext = React.createContext();
+
+const Component1() => {
+  const pi = 3.14;
+  const removeItem = (id) => {...};
+  // Wrap the root component in your <context.Provider value={...}/>
+  return (
+    <newContext.Provider value={{pi, removeItem}}>
+      <Component2/>
+    </newContext.Provider>
+  );
+}
+
+const Component2() => {
+  // Using the value in the context down the line
+  const contextData = useContext(newContext);
+  const piValFromContext = contextData.pi;
+  const id = 1;
+
+  return (<div>
+    <h3>{piValFromContext}</h3>
+    <button onClick={() => contextData.removeItem(id)}>Remove</button>
+  </div>
+  )
+}
+```
