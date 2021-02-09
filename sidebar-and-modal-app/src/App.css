@@ -8,11 +8,19 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+#root {
+  width: 100vw;
+  height: 100%;
+}
+
+main {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .btn {
@@ -31,19 +39,29 @@ body {
 }
 
 .show-modal-container {
+  background-color: tan;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 70%;
+  height: 100%;
 }
 
 .sidebar-toggle {
-  border: none;
+  width: 30%;
+  height: 100%;
+  background-color: teal;
+}
+
+.sidebar-toggle button {
   background: transparent;
+  margin-left: 80%;
+  border: none;
   color: goldenrod;
   font-size: 3.5rem;
-  max-width: 30%;
 }
 
 .sidebar-toggle button:hover {
   cursor: pointer;
+  color: tomato;
 }

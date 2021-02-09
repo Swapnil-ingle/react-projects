@@ -5,9 +5,11 @@ const Home = () => {
   return (
     <>
       <main>
-        <button className="sidebar-toggle">
-          <FaBars />
-        </button>
+        <div className="sidebar-toggle">
+          <button>
+            <FaBars />
+          </button>
+        </div>
         <div className="show-modal-container">
           <button className="btn">Show Modal</button>
         </div>
