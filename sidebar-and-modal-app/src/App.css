@@ -39,18 +39,20 @@ main {
 }
 
 .show-modal-container {
-  background-color: tan;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 70%;
   height: 100%;
+  position: relative;
 }
 
 .sidebar-toggle {
   width: 30%;
   height: 100%;
   background-color: teal;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in;
 }
 
 .sidebar-toggle button {
@@ -59,9 +61,48 @@ main {
   border: none;
   color: goldenrod;
   font-size: 3.5rem;
+  padding-top: 1rem;
+  outline: none;
 }
 
 .sidebar-toggle button:hover {
   cursor: pointer;
   color: tomato;
+}
+
+.hide {
+  transform: translateX(-75%);
+  transition: transform 0.5s ease-in;
+}
+
+.modal-container {
+  background-color: ivory;
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.modal-container button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  color: firebrick;
+}
+
+.modal-container button:hover {
+  cursor: pointer;
+  color: brown;
+}
+
+.hide-modal-container {
+  display: none;
 }
