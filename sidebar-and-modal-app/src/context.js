@@ -1,7 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
 
-const context = () => {
-  return <div></div>;
-};
+const context = null;
 
 export default context;

@@ -1,23 +1,16 @@
-import React, { useRef } from "react";
-import { FaBars } from "react-icons/fa";
+import React, { useRef, useState } from "react";
 import Modal from "./Modal";
+import Sidebar from "./Sidebar";
 
 const Home = () => {
   const sidebarRef = useRef("");
-
-  const sidebarToggle = () => {
-    sidebarRef.current.classList.toggle("hide");
-  };
+  const [expandModalContainer, setExpandModalContainer] = useState(false);
 
   return (
     <>
       <main>
-        <div className="sidebar-toggle" ref={sidebarRef}>
-          <button onClick={sidebarToggle}>
-            <FaBars />
-          </button>
-        </div>
-        <Modal />
+        <Sidebar setExpandModalContainer={setExpandModalContainer} />
+        <Modal expandModalContainer={expandModalContainer} />
       </main>
     </>
   );
