@@ -144,3 +144,17 @@ Changes to hamburger for mobile and shows dropdown navBar instead.
 3. CSS transition and animation
 
 [Click here to Interact](https://si-nav-bar.netlify.app/)
+
+## Sidebar And Modal App
+
+[Click here to Interact](https://si-sidebar-and-modal.netlify.app/)
+
+**Info:** A sidebar and modal POC app which uses ReactJS context hook to communicate between components.
+
+### New Learning Topic Engaged
+
+1. useContext ReactJS Hook
+2. Setting up globalContext which can be used anywhere in the application using a customHook.
+3. Custom hook - useGlobalContext
+
+[Click here to Interact](https://si-sidebar-and-modal.netlify.app/)
