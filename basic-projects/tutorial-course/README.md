@@ -552,7 +552,10 @@ To reuse a functionality (for ex: fetching of data) the React community has made
 
 You can also create your own custom hook to (re)use the same functionalities across components.
 
-**Note:** Your custom hooks MUST start with _use_ prefix. For ex: useFetch, useFilter, etc.
+**Note:**
+
+1. Your custom hooks MUST start with _use_ prefix. For ex: useFetch, useFilter, etc.
+2. You can call a React hook from either inside a container or a custom hook (NOT from a function).
 
 Ex:
 
