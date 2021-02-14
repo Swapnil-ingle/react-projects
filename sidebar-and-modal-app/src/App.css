@@ -42,18 +42,18 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 85%;
   height: 100%;
   position: relative;
 }
 
 .sidebar-toggle {
-  width: 30%;
+  width: 15%;
   height: 100%;
   background-color: teal;
   display: flex;
   flex-direction: column;
-  transition: transform 0.5s ease-in;
+  transition: left 2s ease-out;
   align-items: flex-end;
 }
 
@@ -63,23 +63,22 @@ main {
   color: goldenrod;
   font-size: 3.5rem;
   padding-top: 1rem;
-  padding-right: 10px;
+  padding-right: 5px;
   outline: none;
 }
 
 .sidebar-toggle button:hover {
   cursor: pointer;
-  color: tomato;
+  color: ivory;
 }
 
 .hide {
-  /* transform: translateX(-75%); */
-  width: 8%;
-  transition: transform 0.5s ease-in;
+  width: 5%;
+  transition: width 0.5s ease-in;
 }
 
 .show-modal-container-expand {
-  width: 92%;
+  width: 95%;
 }
 
 .modal-container {
@@ -112,4 +111,36 @@ main {
 
 .hide-modal-container {
   display: none;
+}
+
+.sidebar-links {
+  width: 100%;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  color: ivory;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.sidebar-links a:hover {
+  color: goldenrod;
+}
+
+.sidebar-links section {
+  text-align: right;
+  padding-top: 1rem;
+  padding-right: 1rem;
+}
+
+.sidebar-links h2,
+h3 {
+  display: inline;
+  padding-left: 5px;
+}
+
+.sidebar-links h2 {
+  font-size: 2rem;
 }

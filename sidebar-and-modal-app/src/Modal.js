@@ -8,7 +8,7 @@ const Modal = () => {
   const showModalContainerRef = useRef("");
 
   useEffect(() => {
-    if (isSidebarOpen) {
+    if (!isSidebarOpen) {
       showModalContainerRef.current.classList.add(
         "show-modal-container-expand"
       );
