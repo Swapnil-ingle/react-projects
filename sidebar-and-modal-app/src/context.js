@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  return <AppContext.Provider value="hello">{children}</AppContext.Provider>;
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  return (
+    <AppContext.Provider
+      value={{
+        isSidebarOpen,
+        toggleSidebar,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
+};
+
+// Creating a custom hook
+
+export const useGlobalContext = () => {
+  return useContext(AppContext);
 };
 
 export { AppContext, AppProvider };

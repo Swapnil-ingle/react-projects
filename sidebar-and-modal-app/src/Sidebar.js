@@ -1,11 +1,14 @@
 import React, { useRef } from "react";
 import { FaBars } from "react-icons/fa";
+import { useGlobalContext } from "./context";
 
-const Sidebar = ({ setExpandModalContainer }) => {
+const Sidebar = () => {
   const sidebarRef = useRef("");
+  const { toggleSidebar } = useGlobalContext();
+
   const sidebarToggle = () => {
     sidebarRef.current.classList.toggle("hide");
-    setExpandModalContainer(true);
+    toggleSidebar();
   };
 
   return (

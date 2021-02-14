@@ -1,13 +1,14 @@
 import React, { useRef, useEffect } from "react";
 import { FaWindowClose } from "react-icons/fa";
-import context from "./context";
+import { useGlobalContext } from "./context";
 
-const Modal = ({ expandModalContainer }) => {
+const Modal = () => {
+  const { isSidebarOpen } = useGlobalContext();
   const modalContainerRef = useRef("");
   const showModalContainerRef = useRef("");
 
   useEffect(() => {
-    if (expandModalContainer) {
+    if (isSidebarOpen) {
       showModalContainerRef.current.classList.add(
         "show-modal-container-expand"
       );
@@ -16,7 +17,7 @@ const Modal = ({ expandModalContainer }) => {
         "show-modal-container-expand"
       );
     }
-  }, [expandModalContainer]);
+  }, [isSidebarOpen]);
 
   const hideModalContainer = () => {
     modalContainerRef.current.classList.toggle("hide-modal-container");
