@@ -18,7 +18,7 @@ This will create a package.json file, which has all the dependencies.
 
 ### Install package globally (access anywhere) requires SUDO
 
-`npm isntall <package-name> -g`
+`npm install <package-name> -g`
 
 ### Use it only in development
 
@@ -457,7 +457,7 @@ No need to separately import every other component.
 
 ### useReducer
 
-We use useReducer to change states, as app become more complex you need a proper protocol to changing states. This protocol is usually followed by everyone in the team.
+We use useReducer to change states, as app become more complex you need a proper protocol to changing states. This protocol is usually followed by everyone in the team, and provides a single point of contact for any future changes.
 
 Every var should be in a single object - conventionally called as state - and every change to these state is done via action called as dispatch.
 
@@ -473,7 +473,7 @@ const defaultState = {
 };
 
 const Index = () => {
-  const [state, dispatch] = useReducer(reducer, defaultState);
+  const [state, dispatch] = useReducer(reducer, defaultState); // This is how the useReducer line should look like.
 }
 ```
 
@@ -487,7 +487,7 @@ const [state, dispatch] = useReducer(reducer, defaultState);
 > 2. The `defaultState` is the default state which will have all the `state` variables in their default value.
 > 3. The `dispatch` should be called whenever the user wants to change the variables in state. The `dispatch` should be called with `dispatch({type: '<ACTION_NAME>'})` params.
 > 4. The `reducer` is a user-defined function which gets invoked when the `dispatch` method is called from React component. The `reducer` function should have two parameters `state, action`.
->    > The `reducer` function should ALWAYS retu`rn `state`or else the component won't work. The`reducer` function will perform different actions depending upon the action (`{type: '<ACTION_NAME>'}`) passed in `dispatch` invocation.
+>    > The `reducer` function should ALWAYS return `state`or else the component won't work. The `reducer` function will perform different actions depending upon the action (`{type: '<ACTION_NAME>'}`) passed in `dispatch` invocation.
 
 ## Prop Drilling
 
