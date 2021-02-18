@@ -8,10 +8,13 @@ const reducer = (state, action) => {
       return { ...state, cart: newCart };
     case "INCREASE":
       var id = action.payload;
-      var item = state.cart.filter((item) => item.id === id);
-      item.amount += 1;
-      var newCart = [state.cart.filter((item) => item.id !== id), item];
-      return { ...state, cart: newCart };
+      const tempCart = state.cart.map((item) => {
+        if (item.id === id) {
+          return { ...item, amount: item.amount + 1 };
+        }
+        return item;
+      });
+      return { ...state, cart: tempCart };
     default:
       console.log("Default reducer call...");
       return state;
