@@ -593,3 +593,34 @@ export const useFetch = (url) => {
 ```
 
 ## React - PropTypes
+
+PropTypes are used to deal with situtaion where either an attribute is missing, or nested object in the attribute is missing.
+
+When we access such attribute it returns nothing or give an error (if we access the nested attribute).
+
+For example:
+
+```JS
+// 1. Data - default sample data
+const data = [
+  {id: 1, faceValue: 2, type: "Spade", image: {name: "spade of 2", URL: "./spade-2.png"}},
+  {id: 2, faceValue: 3, type: "Club", image: {name: "club of 3", URL: "./club-3.png"}},
+  {id: 3, faceValue: 4, type: "Spade"}
+]
+
+// 2. Main Component - Where we iterate over the data
+const main = () => {
+  data.map((item) => {
+    return <Card key={item.id} {...item}/>
+  })
+}
+
+// 3. Card Component - Where we use the passed value from iteration above
+const Card = ({faceValue, type, image}) => {
+  <h2>{faceValue}</h2>
+  <p>{type}</p>
+  <img>{image.URL}</img> // 4. NOTE: This line will FAIL because in the data (id=3), the image attr is missing.
+  // 5. This will be passed as undefined over here and whole list rendering will fail with ReactJS error.
+  // 6. To avoid this we use PropType.
+}
+```
