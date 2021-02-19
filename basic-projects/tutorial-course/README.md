@@ -464,7 +464,16 @@ Every var should be in a single object - conventionally called as state - and ev
 ```JS
 import React, { useReducer } from "react";
 
-const reducer = (state, action) => {}; // Reducer should have these two variables 'state, action'
+const reducer = (state, action) => {
+  if (action.type === "OPEN_MODAL") {
+    return {...state, isModalOpen: true}
+  } else if (action.type === "ADD_PEOPLE") {
+    const person = action.payload;
+    return {..state, people: [...state.people, person]}
+  }
+
+  return {...state}; // Reducer should always return a state
+}; // Reducer should have these two variables 'state, action'
 
 const defaultState = {
   people: [],
@@ -473,14 +482,16 @@ const defaultState = {
 };
 
 const Index = () => {
-  const [state, dispatch] = useReducer(reducer, defaultState); // This is how the useReducer line should look like.
+  // This is how the useReducer line should look like.
+  // state is the current value of the initial state
+  const [state, dispatch] = useReducer(reducer, defaultState);
+
+  // Calling the dispatch
+  dispatch({type: "OPEN_MODAL"});
+  // Calling the dispatch using a payload
+  const person = {id: 1, name: "Swapnil", email: "swapnilingle.dev@gmail.com"};
+  dispatch({type: "ADD_PEOPLE", payload: person});
 }
-```
-
-#### Explaining the useReducer() function line
-
-```JS
-const [state, dispatch] = useReducer(reducer, defaultState);
 ```
 
 > 1. The `state` variable is the object which has all the variables needed for that React component.
@@ -580,3 +591,5 @@ export const useFetch = (url) => {
   return { loading, data };
 };
 ```
+
+## React - PropTypes
