@@ -6,25 +6,22 @@ const reducer = (state, action) => {
       var id = action.payload;
       var newCart = state.cart.filter((item) => item.id !== id);
       return { ...state, cart: newCart };
-    case "INCREASE":
-      var id = action.payload;
-      var tempCart = state.cart.map((item) => {
-        if (item.id === id) {
-          return { ...item, amount: item.amount + 1 };
-        }
-        return item;
-      });
-      return { ...state, cart: tempCart };
-    case "DECREASE":
-      var id = action.payload;
+    case "CHANGE_AMOUNT":
+      var id = action.payload.id;
+      var type = action.payload.type;
+
       var tempCart = state.cart
         .map((item) => {
           if (item.id === id) {
-            return { ...item, amount: item.amount - 1 };
+            return {
+              ...item,
+              amount: type === "INCREASE" ? item.amount + 1 : item.amount - 1,
+            };
           }
           return item;
         })
         .filter((item) => item.amount !== 0);
+
       return { ...state, cart: tempCart };
     case "GET_TOTALS":
       let { total, amount } = state.cart.reduce(
