@@ -623,4 +623,20 @@ const Card = ({faceValue, type, image}) => {
   // 5. This will be passed as undefined over here and whole list rendering will fail with ReactJS error.
   // 6. To avoid this we use PropType.
 }
+
+// 7. PropTypes
+
+Card.propTypes = {
+  faceValue: PropTypes.number.isRequired; // When the faceValue in 'Card' component is undefined, it will throw an error with the param value missing
+  type: PropTypes.string.isRequired;
+  image: PropTypes.object.isRequired;
+}
+
+// 8. Default PropTypes
+// Whenever a Card param is missing, it will pick it up from the PropType
+Card.defaultProps = {
+  faceValue: 0,
+  type: "None",
+  image: {url: "../defaultImage.png"}
+}
 ```
