@@ -640,3 +640,83 @@ Card.defaultProps = {
   image: {url: "../defaultImage.png"}
 }
 ```
+
+## React-Router
+
+React-router is not official React package, it is a third-party library but it is the most famous one.
+
+React-router helps user to navigate to different pages (Components) using client-side routing.
+
+So, when the URL changes, we are not neccessarily hitting the server and coming back with response. All that happens on the client-side, which is faster - when you switch between pages.
+
+A good read on client v/s server side routing: https://medium.com/@wilbo/server-side-vs-client-side-routing-71d710e9227f
+
+### Get started with React-Router
+
+To install the react-router package, you need to run:
+
+```JS
+npm install react-router-dom
+```
+
+#### Example
+
+```JS
+import React from "react";
+// 1. Import the react router components
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// pages
+import Home from "./Home";
+import About from "./About";
+import People from "./People";
+import Error from "./Error";
+import Person from "./Person";
+// navbar
+import Navbar from "./Navbar";
+const ReactRouterSetup = () => {
+  return (
+    // 2. Enclose the index.js (root) inside the <Router> component-tag
+    <Router>
+      // 3. Navbar component will now appear on every page
+      <Navbar />
+      // 4. Switch component makes sure that only the first matching Route is rendered.
+      <Switch>
+        // 5. Components enclosed with <Route path="path"> will be rendered when that
+        // path is hit from the application.
+        <Route exact path="/">
+          <Home />
+        </Route>
+        // 6. The 'exact' flag in the above <Route/> will make sure that enclosed
+        // component will only be rendered when path is exact match
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/people">
+          <People />
+        </Route>
+        // 7. The colon followed by id is the argument-params which can be used in the
+        // Person component.
+        // NOTE: Instead of enclosing the <Person> component we pass it in children tag.
+        <Route path="/person/:id" children={<Person />}></Route>
+        <Route path="*">
+          <Error />
+        </Route>
+      </Switch>
+    </Router>
+  );
+};
+
+// The person Component
+
+import {useParams} from "react-router-dom";
+
+const Person = () => {
+  // 8. destructing the passed param-arguments
+  const { id } = useParams();
+}
+
+import {Link} from "react-router-dom";
+
+// 9. Make sure to use <Link to="/path"/> tag to navigate
+
+```
