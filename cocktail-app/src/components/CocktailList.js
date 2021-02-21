@@ -4,10 +4,25 @@ import Loading from "./Loading";
 import { useGlobalContext } from "../context";
 
 const CocktailList = () => {
+  const { cocktails, loading } = useGlobalContext();
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (cocktails.length < 1) {
+    return <h2 className="section-title">Nothing matched your search!</h2>;
+  }
+
   return (
-    <div>
-      <h2>cocktail list component</h2>
-    </div>
+    <section className="section">
+      <h2 className="section-title">Cocktails</h2>
+      <div className="cocktails-center">
+        {cocktails.map((cocktail) => {
+          return <Cocktail key={cocktail.id} {...cocktail} />;
+        })}
+      </div>
+    </section>
   );
 };
 
