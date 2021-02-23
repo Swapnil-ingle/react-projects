@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 
-export default useStyles((theme) => ({
+export default makeStyles((theme) => ({
   desktop: {
     [theme.breakpoints.up("sm")]: {
       display: "none",
