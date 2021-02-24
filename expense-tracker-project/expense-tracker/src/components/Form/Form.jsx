@@ -1,9 +1,11 @@
 import React from 'react'
 import {TextField, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem} from "@material-ui/core";
 import useStyles from "./styles";
+import {useGlobalContext} from "../../context/context";
 
 const Form = () => {
     const classes = useStyles();
+    const {addTransaction} = useGlobalContext();
 
     return (
         <Grid container spacing={2}>
@@ -37,7 +39,7 @@ const Form = () => {
                     <TextField type="date" label="Date" fullWidth/>
                 </Grid>
             </Grid>
-            <Button className={classes.button} variant="outlined" color="primary" fullWidht>Create</Button>
+            <Button className={classes.button} variant="outlined" color="primary" fullWidth>Create</Button>
         </Grid>
     )
 }

@@ -1,16 +1,12 @@
 import React from 'react'
 import {List as MUIList, ListItem, ListItemAvatar, ListItemText, Avatar, ListItemSecondaryAction, IconButton, Slide} from "@material-ui/core";
 import {Delete, MoneyOff} from "@material-ui/icons";
-
 import useStyles from "./styles";
+import { useGlobalContext } from "../../context/context";
 
 const List = () => {
     const classes = useStyles();
-    const transactions = [
-        {id: 1, type: "Income", category: "Salary", amount: 50, date: "21 Feb 2021"},
-        {id: 2, type: "Expense", category: "Pets", amount: 120, date: "20 Feb 2021"},
-        {id: 3, type: "Income", category: "Business", amount: 20, date: "14 Feb 2021"}
-    ];
+    const {deleteTransaction, transactions} = useGlobalContext();
 
     return (
         <MUIList dense={false} className={classes.list}>
@@ -24,7 +20,7 @@ const List = () => {
                         </ListItemAvatar>
                         <ListItemText primary={transaction.category} secondary={`$${transaction.amount} - ${transaction.date}`}/>
                         <ListItemSecondaryAction>
-                            <IconButton edge='end' aria-label='delete' onCLick=''>
+                            <IconButton edge='end' aria-label='delete' onClick={() => deleteTransaction(transaction.id)}>
                                 <Delete/>
                             </IconButton>
                         </ListItemSecondaryAction>
