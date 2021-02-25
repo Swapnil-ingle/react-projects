@@ -2,29 +2,9 @@ import React, { useContext, useReducer } from "react";
 import { reducer } from "./Reducer";
 
 const initialState = {
-  transactions: [
-    {
-      id: 1,
-      type: "Income",
-      category: "Salary",
-      amount: 50,
-      date: "21 Feb 2021",
-    },
-    {
-      id: 2,
-      type: "Expense",
-      category: "Pets",
-      amount: 120,
-      date: "20 Feb 2021",
-    },
-    {
-      id: 3,
-      type: "Income",
-      category: "Business",
-      amount: 20,
-      date: "14 Feb 2021",
-    },
-  ],
+  transactions: [],
+  totalIncome: 0,
+  totalExpense: 0,
 };
 const AppContext = React.createContext(initialState);
 
@@ -42,6 +22,8 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         transactions: state.transactions,
+        totalIncome: state.totalIncome,
+        totalExpense: state.totalExpense,
         deleteTransaction,
         addTransaction,
       }}
