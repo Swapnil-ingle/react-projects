@@ -1,27 +1,19 @@
 const reducer = (state, action) => {
   let newTransactions;
-  let newTotalIncome;
-  let newTotalExpense;
   let newTransaction;
 
   switch (action.type) {
     case "ADD_TRANSACTION":
       newTransaction = action.payload;
-
-      newTransaction = {
-        ...newTransaction,
-        id: new Date().getTime().toString(),
-      };
-
       newTransactions = [newTransaction, ...state.transactions];
 
-      newTotalIncome = state.totalIncome;
-      newTotalExpense = state.totalExpense;
+      let newTotalIncome = state.totalIncome;
+      let newTotalExpense = state.totalExpense;
 
       if (newTransaction.type === "Income") {
-        newTotalIncome = state.totalIncome + parseInt(newTransaction.amount);
+        newTotalIncome = state.totalIncome + newTransaction.amount;
       } else {
-        newTotalExpense = state.totalExpense + parseInt(newTransaction.amount);
+        newTotalExpense = state.totalExpense + newTransaction.amount;
       }
 
       return {
