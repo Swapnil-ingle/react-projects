@@ -22,8 +22,6 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         transactions: state.transactions,
-        totalIncome: state.totalIncome,
-        totalExpense: state.totalExpense,
         deleteTransaction,
         addTransaction,
       }}

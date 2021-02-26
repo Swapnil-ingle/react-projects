@@ -7,20 +7,9 @@ const reducer = (state, action) => {
       newTransaction = action.payload;
       newTransactions = [newTransaction, ...state.transactions];
 
-      let newTotalIncome = state.totalIncome;
-      let newTotalExpense = state.totalExpense;
-
-      if (newTransaction.type === "Income") {
-        newTotalIncome = state.totalIncome + newTransaction.amount;
-      } else {
-        newTotalExpense = state.totalExpense + newTransaction.amount;
-      }
-
       return {
         ...state,
         transactions: newTransactions,
-        totalIncome: newTotalIncome,
-        totalExpense: newTotalExpense,
       };
     case "DELETE_TRANSACTION":
       newTransactions = state.transactions.filter(
