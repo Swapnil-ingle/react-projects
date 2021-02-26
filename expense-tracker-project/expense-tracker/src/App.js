@@ -3,11 +3,9 @@ import { Grid } from "@material-ui/core";
 import Details from "./components/Details/Details";
 import Main from "./components/Main/Main";
 import useStyles from "./styles";
-import { useGlobalContext } from "./context/context";
 
 const App = () => {
   const classes = useStyles();
-  const { totalIncome, totalExpense } = useGlobalContext();
 
   return (
     <div>
