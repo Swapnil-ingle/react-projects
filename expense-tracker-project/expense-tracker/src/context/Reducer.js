@@ -9,6 +9,14 @@ const Reducer = (state, action) => {
       return { ...state, transactions: action.payload };
     case "ADD_TRANSACTION":
       newTransaction = action.payload;
+      const total = state.transaction.reduce(
+        (acc, currVal) =>
+          (acc += currVal.type === "Income" ? currVal.amount : 0),
+        0
+      );
+      if (newTransaction.type === "Expense" && total < newTransaction.amount) {
+        alert("Not enought balance, add sufficient Income!");
+      }
       newTransactions = [newTransaction, ...state.transactions];
 
       saveToLocalStorage("transactions", newTransactions);
