@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {Card, CardHeader, CardContext, Typography, Grid, Divider, CardContent} from "@material-ui/core";
+import {Card, CardHeader, Typography, Grid, Divider, CardContent} from "@material-ui/core";
 import useStyles from './styles';
 import Form from '../Form/Form';
 import List from '../List/List';
@@ -13,7 +13,7 @@ const Main = () => {
     useEffect(() => {
         let newTotalBalance = 0;
 
-        transactions.map((item) => {
+        transactions.forEach((item) => {
             if (item.type === 'Income') {
                 newTotalBalance += parseInt(item.amount);
             } else {
