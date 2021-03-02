@@ -1,13 +1,15 @@
 import "./App.css";
 import Card from "./components/Card/Card";
+import { useGlobalContext } from "./context/context";
 
 function App() {
+  const { trackedHabits } = useGlobalContext();
+
   return (
     <main>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {trackedHabits.map((habit) => {
+        return <Card key={habit.id} {...habit} />;
+      })}
     </main>
   );
 }

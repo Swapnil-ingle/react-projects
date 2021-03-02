@@ -2,11 +2,11 @@ import React from 'react'
 import Grid from '../Grid/Grid'
 import "./Card.css";
 
-const Card = () => {
+const Card = ({name, startDate, doneTasksOn}) => {
     return (
         <div className="card">
-            <h2>Card Title</h2>
-            <Grid/>
+            <h2>{name}</h2>
+            <Grid startDate={startDate} doneTasksOn={doneTasksOn}/>
             <button>Mark Today</button>
         </div>
     )
