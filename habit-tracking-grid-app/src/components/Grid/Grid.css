@@ -6,6 +6,7 @@
   margin-bottom: 15px;
   max-height: 400px;
   overflow: auto;
+  margin-left: -15px;
 }
 
 .grid small {
@@ -40,6 +41,10 @@
   width: 15px;
 }
 
-.grid-box active {
+.active {
   background-color: seagreen;
+}
+
+.missed {
+  background-color: #e74c3c;
 }

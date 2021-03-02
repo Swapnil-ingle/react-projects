@@ -16,7 +16,6 @@ body {
 main {
   min-height: 100vh;
   max-height: 100%;
-  background-color: rgba(35, 35, 36, 0.568);
   display: flex;
   justify-content: center;
   align-items: center;

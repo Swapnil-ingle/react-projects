@@ -6,6 +6,12 @@ const initialState = {
   trackedHabits: [
     {
       id: 1,
+      name: "React",
+      startDate: "2021-03-02",
+      doneTasksOn: ["2021-03-02"],
+    },
+    {
+      id: 2,
       name: "Gym",
       startDate: "2021-03-02",
       doneTasksOn: ["2021-03-02"],
