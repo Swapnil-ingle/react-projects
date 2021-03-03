@@ -6,7 +6,6 @@ import {
   resolveDayLegendDiv,
   resolveMonthNumeralToSpell,
 } from "../../utils/utils";
-import ToolTip from "@material-ui/core/Tooltip";
 import GridBox from "./GridBox/GridBox";
 
 const Grid = ({ startDate, doneTasksOn }) => {
@@ -29,35 +28,29 @@ const Grid = ({ startDate, doneTasksOn }) => {
 
         if (gridBoxColId !== 0) {
           let isTaskDone = doneTasksOn.indexOf(item) !== -1;
-          let taskNotDoneForToday = null;
-
-          if (!isTaskDone) {
-            const temp = formatDateObj(new Date());
-            taskNotDoneForToday =
-              new Date(item).getTime() === new Date(temp).getTime();
-          }
 
           if (new Date(item).getTime() < new Date(startDate).getTime()) {
-            return <GridBox key={gridBoxId} id={gridBoxId} isEmpty={true} />;
+            return (
+              <GridBox
+                key={gridBoxId}
+                id={gridBoxId}
+                isEmpty={true}
+                isPending={true}
+              />
+            );
           }
 
           return (
-            <ToolTip key={gridBoxId} title={getToolTipCaption(item)} arrow>
-              <>
-                <GridBox id={gridBoxId} isTaskDone={isTaskDone} />
-              </>
-              {/* <div
-                className={`grid-box ${
-                  taskNotDoneForToday
-                    ? ""
-                    : isTaskDone
-                    ? "active"
-                    : new Date(item) < new Date()
-                    ? "missed"
-                    : ""
-                }`}
-              ></div> */}
-            </ToolTip>
+            <GridBox
+              key={gridBoxId}
+              id={gridBoxId}
+              isTaskDone={isTaskDone}
+              isPending={
+                new Date(item) > new Date() ||
+                item === formatDateObj(new Date())
+              }
+              toolTipCaption={getToolTipCaption(item)}
+            />
           );
         } else {
           gridBoxColId++;
@@ -69,13 +62,21 @@ const Grid = ({ startDate, doneTasksOn }) => {
                 key={gridBoxId}
                 id={gridBoxId}
                 isEmpty={true}
+                isPending={true}
                 caption={resolveMonthNumeralToSpell(
                   new Date(item).getMonth() + 1
                 )}
               />
             );
           } else {
-            return <GridBox key={gridBoxId} id={gridBoxId} isEmpty={true} />;
+            return (
+              <GridBox
+                key={gridBoxId}
+                id={gridBoxId}
+                isEmpty={true}
+                isPending={true}
+              />
+            );
           }
         }
       })}
