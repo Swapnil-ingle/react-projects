@@ -7,14 +7,14 @@ const initialState = {
     {
       id: 1,
       name: "React",
-      startDate: "2021-03-02",
+      startDate: "2021-03-01",
       doneTasksOn: ["2021-03-02"],
     },
     {
       id: 2,
       name: "Gym",
-      startDate: "2021-03-02",
-      doneTasksOn: ["2021-03-02"],
+      startDate: "2021-03-01",
+      doneTasksOn: ["2021-03-01"],
     },
   ],
 };
@@ -25,8 +25,15 @@ const AppContext = React.createContext(initialState);
 // Wrap a AppProvider
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const toggleToday = (id) => {
+    dispatch({ type: "TOGGLE_TODAY", payload: id });
+  };
+
   return (
-    <AppContext.Provider value={{ trackedHabits: state.trackedHabits }}>
+    <AppContext.Provider
+      value={{ trackedHabits: state.trackedHabits, toggleToday }}
+    >
       {children}
     </AppContext.Provider>
   );

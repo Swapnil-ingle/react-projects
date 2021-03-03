@@ -27,8 +27,13 @@
   outline: none;
   border: none;
   border-radius: 3px;
-  background-color: seagreen;
+  background-color: #16a085;
   font-weight: bold;
   color: ivory;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card button:hover {
+  cursor: pointer;
+  background-color: #19b696;
 }
