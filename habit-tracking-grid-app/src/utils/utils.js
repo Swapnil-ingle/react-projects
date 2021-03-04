@@ -86,14 +86,6 @@ export const resolveMonthNumeralToSpell = (monthInt) => {
   }
 };
 
-export const resolveDayLegendDiv = (cellNo) => {
-  return (
-    <div key={cellNo} className="grid-box-empty">
-      <small>{resolveDayNumberToDayName(cellNo)}</small>
-    </div>
-  );
-};
-
 export const resolveDayNumberToDayName = (dayNum) => {
   switch (dayNum) {
     case 3:

@@ -23,5 +23,14 @@ main {
 }
 
 button {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: seagreen;
   margin: 15px 0;
+}
+
+.add-new-habit-btn:hover {
+  cursor: pointer;
+  color: rgb(33, 100, 62);
 }

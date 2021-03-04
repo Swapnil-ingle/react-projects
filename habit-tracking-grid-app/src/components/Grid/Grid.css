@@ -7,6 +7,7 @@
   max-height: 400px;
   overflow: auto;
   margin-left: -15px;
+  position: relative;
 }
 
 .grid small {
@@ -20,4 +21,10 @@
 
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
+}
+
+.fixed {
+  position: sticky;
+  top: 0px;
+  background-color: #fff;
 }

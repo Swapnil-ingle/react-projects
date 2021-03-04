@@ -3,8 +3,8 @@ import "./Grid.css";
 import {
   formatDateObj,
   generateGridDateArray,
-  resolveDayLegendDiv,
   resolveMonthNumeralToSpell,
+  resolveDayNumberToDayName,
 } from "../../utils/utils";
 import GridBox from "./GridBox/GridBox";
 
@@ -95,6 +95,14 @@ const getToolTipCaption = (strDate) => {
   const fullDate = date + "-" + mon + "-" + year;
 
   return fullDate;
+};
+
+const resolveDayLegendDiv = (cellNo) => {
+  return (
+    <div key={cellNo} className="grid-box-empty fixed">
+      <small>{resolveDayNumberToDayName(cellNo)}</small>
+    </div>
+  );
 };
 
 export default Grid;
