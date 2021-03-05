@@ -34,3 +34,22 @@ button {
   cursor: pointer;
   color: rgb(33, 100, 62);
 }
+
+.habit-cards-container {
+  /* background-color: rgba(100, 148, 237, 0.24); */
+  max-width: 765px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+#scroll-left-btn,
+#scroll-right-btn {
+  color: black;
+}
+
+#scroll-left-btn:hover,
+#scroll-right-btn:hover {
+  cursor: pointer;
+}

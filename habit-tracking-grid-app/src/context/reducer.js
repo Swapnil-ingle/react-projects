@@ -17,7 +17,8 @@ export const reducer = (state, action) => {
       return { ...state, doneTasksOn: newDoneTasksOn };
     case "ADD_NEW_HABIT":
       const newHabit = action.payload;
-      return { ...state, habits: [...habits, newHabit] };
+      state.habits.push(newHabit);
+      return { ...state };
     default:
       return { ...state };
   }

@@ -7,14 +7,14 @@ const initialState = {
     {
       id: 1,
       name: "React",
-      description: "",
+      description: "Do some progress on React at least 30 mins everyday",
       startDate: "2021-03-01",
       doneTasksOn: ["2021-03-02"],
     },
     {
       id: 2,
       name: "Gym",
-      description: "",
+      description: "Workout till you hit at least 250 kCal everyday",
       startDate: "2021-03-01",
       doneTasksOn: ["2021-03-01"],
     },

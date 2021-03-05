@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80%;
+  height: 540px;
+  min-width: 215px;
   width: 215px;
   border-radius: 15px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
@@ -12,13 +13,22 @@
   margin: 10px 20px;
 }
 
-.card h2 {
-  margin-top: 0px;
-  padding-top: 20px;
+.card-header {
   background: wheat;
   width: 100%;
   text-align: center;
   border-bottom: 2px dotted gray;
+  margin-bottom: 15px;
+}
+
+.card-header h2 {
+  margin: 0;
+}
+
+.card-header p {
+  margin-top: 1px;
+  margin-bottom: 4px;
+  font-size: 10px;
 }
 
 .card button {
