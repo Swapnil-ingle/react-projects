@@ -2,18 +2,20 @@ import "./App.css";
 import Card from "./components/Card/Card";
 import { useGlobalContext } from "./context/context";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
+import FormBtn from "./components/Form/FormBtn/FormBtn";
 
 function App() {
-  const { trackedHabits } = useGlobalContext();
+  const { habits } = useGlobalContext();
 
   return (
     <main>
-      {trackedHabits.map((habit) => {
+      {habits.map((habit) => {
         return <Card key={habit.id} {...habit} />;
       })}
-      <button className="add-new-habit-btn">
+      {/* <button className="add-new-habit-btn">
         <AddCircleIcon style={{ fontSize: 40 }} />
-      </button>
+      </button> */}
+      <FormBtn />
     </main>
   );
 }

@@ -3,16 +3,18 @@ import React from "react";
 import { reducer } from "./reducer";
 
 const initialState = {
-  trackedHabits: [
+  habits: [
     {
       id: 1,
       name: "React",
+      description: "",
       startDate: "2021-03-01",
       doneTasksOn: ["2021-03-02"],
     },
     {
       id: 2,
       name: "Gym",
+      description: "",
       startDate: "2021-03-01",
       doneTasksOn: ["2021-03-01"],
     },
@@ -30,9 +32,13 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "TOGGLE_TODAY", payload: id });
   };
 
+  const addNewHabit = (habit) => {
+    dispatch({ type: "ADD_NEW_HABIT", payload: habit });
+  };
+
   return (
     <AppContext.Provider
-      value={{ trackedHabits: state.trackedHabits, toggleToday }}
+      value={{ habits: state.habits, toggleToday, addNewHabit }}
     >
       {children}
     </AppContext.Provider>

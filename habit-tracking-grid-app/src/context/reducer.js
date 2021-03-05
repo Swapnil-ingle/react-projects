@@ -3,9 +3,7 @@ import { formatDateObj } from "../utils/utils";
 export const reducer = (state, action) => {
   switch (action.type) {
     case "TOGGLE_TODAY":
-      const habits = state.trackedHabits.filter(
-        (item) => item.id === action.payload
-      );
+      const habits = state.habits.filter((item) => item.id === action.payload);
       const currDateFormatted = formatDateObj(new Date());
       const todaysDateIdx = habits[0].doneTasksOn.indexOf(currDateFormatted);
       let newDoneTasksOn = habits[0].doneTasksOn;
@@ -17,6 +15,9 @@ export const reducer = (state, action) => {
       }
 
       return { ...state, doneTasksOn: newDoneTasksOn };
+    case "ADD_NEW_HABIT":
+      const newHabit = action.payload;
+      return { ...state, habits: [...habits, newHabit] };
     default:
       return { ...state };
   }
