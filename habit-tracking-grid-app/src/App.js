@@ -4,7 +4,7 @@ import Card from "./components/Card/Card";
 import { useGlobalContext } from "./context/context";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-import { Alert } from "@material-ui/lab";
+import Error from "./components/Error/Error";
 
 function App() {
   const { habits } = useGlobalContext();
@@ -13,9 +13,10 @@ function App() {
   if (habits.length <= 0) {
     return (
       <main>
-        <Alert severity="warning">
-          No habits tracked yet - Click '+' button to start tracking.
-        </Alert>
+        <Error
+          severity="warning"
+          msg="No habits tracked yet - Click '+' button to start tracking."
+        />
       </main>
     );
   }

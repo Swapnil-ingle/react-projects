@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Form.css";
 import { useGlobalContext } from "../../context/context";
 import { formatDateObj } from "../../utils/utils";
+import Error from "../Error/Error";
 
 const initialState = {
   id: "",
@@ -14,9 +15,35 @@ const initialState = {
 const Form = ({ handleClose }) => {
   const { addNewHabit } = useGlobalContext();
   const [formData, setFormData] = useState(initialState);
+  const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  useEffect(() => {
+    if (
+      new Date(formData.startDate).getFullYear() !== new Date().getFullYear()
+    ) {
+      setError(true);
+      setErrorMsg("Start date should be of the current year.");
+      return;
+    }
+
+    if (new Date(formData.startDate) > new Date()) {
+      setError(true);
+      setErrorMsg("Start date should be current date or a past date.");
+      return;
+    }
+
+    setError(false);
+    setErrorMsg("");
+  }, [formData.startDate]);
 
   const submitNewHabit = (e) => {
     e.preventDefault();
+
+    if (error) {
+      return;
+    }
+
     addNewHabit({ ...formData, id: new Date().getTime().toString() });
     handleClose();
   };
@@ -24,6 +51,7 @@ const Form = ({ handleClose }) => {
   return (
     <form>
       <h2>Track a new habit</h2>
+      {error && <Error severity="error" msg={errorMsg} />}
       <div className="form-control">
         <label htmlFor="habitName">Name</label>
         <input
@@ -32,6 +60,7 @@ const Form = ({ handleClose }) => {
           type="text"
           name="habitName"
           id="habitName"
+          placeholder="Workout"
         />
       </div>
       <div className="form-control">
@@ -62,7 +91,11 @@ const Form = ({ handleClose }) => {
         />
       </div>
       <div className="submit-form-btn-div">
-        <button type="submit" onClick={(e) => submitNewHabit(e)}>
+        <button
+          id={`${error && "disabled-btn"}`}
+          type="submit"
+          onClick={(e) => submitNewHabit(e)}
+        >
           Submit
         </button>
       </div>

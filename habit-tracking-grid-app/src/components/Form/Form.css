@@ -56,3 +56,12 @@ form h2 {
   cursor: pointer;
   background-color: rgba(0, 255, 128, 0.3);
 }
+
+#disabled-btn {
+  background-color: slategrey;
+}
+
+#disabled-btn:hover {
+  cursor: not-allowed;
+  background-color: slategrey;
+}
