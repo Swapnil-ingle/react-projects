@@ -17,8 +17,7 @@ const Form = ({ handleClose }) => {
 
   const submitNewHabit = (e) => {
     e.preventDefault();
-    setFormData({ ...formData, id: new Date().getTime().toString() });
-    addNewHabit(formData);
+    addNewHabit({ ...formData, id: new Date().getTime().toString() });
     handleClose();
   };
 
@@ -45,7 +44,7 @@ const Form = ({ handleClose }) => {
           onChange={(e) =>
             setFormData({
               ...formData,
-              startDate: formatDateObj(e.target.value),
+              startDate: e.target.value,
             })
           }
         />

@@ -14,7 +14,7 @@ body {
 }
 
 main {
-  min-height: 100vh;
+  min-height: 80vh;
   max-height: 100%;
   display: flex;
   justify-content: center;
@@ -36,7 +36,6 @@ button {
 }
 
 .habit-cards-container {
-  /* background-color: rgba(100, 148, 237, 0.24); */
   max-width: 765px;
   display: flex;
   overflow: hidden;
@@ -44,12 +43,42 @@ button {
   scroll-behavior: smooth;
 }
 
+.habit-cards-container::after {
+  content: "";
+  border-left: 0.01px solid transparent;
+}
+
+@media screen and (max-width: 900px) {
+  .habit-cards-container {
+    max-width: 510px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .habit-cards-container {
+    max-width: 255px;
+  }
+
+  #scroll-left-btn,
+  #scroll-right-btn {
+    padding: 0 0;
+  }
+}
+
 #scroll-left-btn,
 #scroll-right-btn {
+  height: 15rem;
+  background-color: rgba(128, 128, 128, 0.1);
   color: black;
 }
 
 #scroll-left-btn:hover,
 #scroll-right-btn:hover {
   cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+nav {
+  /* position: sticky; */
+  /* top: 0; */
 }

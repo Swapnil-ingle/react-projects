@@ -7,17 +7,17 @@
   height: 540px;
   min-width: 215px;
   width: 215px;
-  border-radius: 15px;
+  border-radius: 8px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid gray;
   margin: 10px 20px;
 }
 
 .card-header {
-  background: wheat;
+  background: #f3a712;
   width: 100%;
   text-align: center;
-  border-bottom: 2px dotted gray;
+  border-bottom: 2px dotted black;
   margin-bottom: 15px;
 }
 
@@ -26,6 +26,7 @@
 }
 
 .card-header p {
+  background-color: #ffffffc0;
   margin-top: 1px;
   margin-bottom: 4px;
   font-size: 10px;

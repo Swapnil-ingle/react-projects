@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     "&:hover": {
       cursor: "pointer",
-      color: "rgb(40, 109, 70)",
+      color: "#2ecc71",
     },
   },
   paper: {

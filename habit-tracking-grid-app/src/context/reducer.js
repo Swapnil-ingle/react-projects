@@ -1,4 +1,5 @@
 import { formatDateObj } from "../utils/utils";
+import { saveToLocalStorage } from "../utils/localStorage";
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -14,10 +15,12 @@ export const reducer = (state, action) => {
         newDoneTasksOn.push(currDateFormatted);
       }
 
-      return { ...state, doneTasksOn: newDoneTasksOn };
+      saveToLocalStorage("habits", { ...state });
+      return { ...state };
     case "ADD_NEW_HABIT":
       const newHabit = action.payload;
       state.habits.push(newHabit);
+      saveToLocalStorage("habits", state);
       return { ...state };
     default:
       return { ...state };
