@@ -56,7 +56,7 @@
 
 #remove-card {
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.15;
   font-size: 5px;
   top: -25px;
   right: -2px;
