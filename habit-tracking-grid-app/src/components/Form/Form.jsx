@@ -6,7 +6,7 @@ import Error from "../Error/Error";
 
 const initialState = {
   id: "",
-  name: "",
+  name: undefined,
   description: "",
   startDate: formatDateObj(new Date()),
   doneTasksOn: [],
@@ -17,6 +17,7 @@ const Form = ({ handleClose }) => {
   const [formData, setFormData] = useState(initialState);
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [disableSubmitBtn, setDisableSubmitBtn] = useState(false);
 
   useEffect(() => {
     if (
@@ -33,14 +34,26 @@ const Form = ({ handleClose }) => {
       return;
     }
 
+    if (formData.name === undefined) {
+      setDisableSubmitBtn(true);
+      return;
+    }
+
+    if (formData.name !== undefined && formData.name.length <= 0) {
+      setError(true);
+      setErrorMsg("Name cannot be empty.");
+      return;
+    }
+
     setError(false);
+    setDisableSubmitBtn(false);
     setErrorMsg("");
-  }, [formData.startDate]);
+  }, [formData.startDate, formData.name]);
 
   const submitNewHabit = (e) => {
     e.preventDefault();
 
-    if (error) {
+    if (error || disableSubmitBtn) {
       return;
     }
 
@@ -56,6 +69,7 @@ const Form = ({ handleClose }) => {
         <label htmlFor="habitName">Name</label>
         <input
           value={formData.name}
+          onBlur={(e) => setFormData({ ...formData, name: e.target.value })}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           type="text"
           name="habitName"
@@ -92,7 +106,7 @@ const Form = ({ handleClose }) => {
       </div>
       <div className="submit-form-btn-div">
         <button
-          id={`${error && "disabled-btn"}`}
+          id={`${(error || disableSubmitBtn) && "disabled-btn"}`}
           type="submit"
           onClick={(e) => submitNewHabit(e)}
         >
