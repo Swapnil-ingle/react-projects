@@ -27,4 +27,5 @@
 
 - You can add something like "You've been 90% consistent with your goal(s)" (If the guy has logged for 90% of the days).
 - There should be yearly/monthly/weekly view of the grids.
-- Should undo today's marked action.
+- Should undo today's marked action. (Done)
+- Should show the current-streak for each habit
