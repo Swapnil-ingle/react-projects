@@ -22,6 +22,12 @@ export const reducer = (state, action) => {
       state.habits.push(newHabit);
       saveToLocalStorage("habits", state);
       return { ...state };
+    case "DELETE_HABIT":
+      const newHabits = state.habits.filter(
+        (item) => item.id !== action.payload
+      );
+      saveToLocalStorage("habits", { ...state, habits: newHabits });
+      return { ...state, habits: newHabits };
     default:
       return { ...state };
   }

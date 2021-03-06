@@ -45,9 +45,6 @@ function App() {
         >
           <ArrowRightIcon />
         </button>
-        {/* <div>
-        <FormBtn />
-      </div> */}
       </main>
     </>
   );

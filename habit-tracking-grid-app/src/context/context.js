@@ -24,9 +24,13 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "ADD_NEW_HABIT", payload: habit });
   };
 
+  const deleteHabit = (id) => {
+    dispatch({ type: "DELETE_HABIT", payload: id });
+  };
+
   return (
     <AppContext.Provider
-      value={{ habits: state.habits, toggleToday, addNewHabit }}
+      value={{ habits: state.habits, toggleToday, addNewHabit, deleteHabit }}
     >
       {children}
     </AppContext.Provider>
