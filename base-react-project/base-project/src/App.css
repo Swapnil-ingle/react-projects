@@ -12,4 +12,79 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: var(--gray-light-1);
+}
+
+/* These are basic design predefined workflow - As suggested by the 'Refactoring UI' book */
+:root {
+  /* Spacing Template */
+  --space-4px: 4px;
+  --space-8px: 8px;
+  --space-12px: 12px;
+  --space-16px: 16px;
+  --space-24px: 24px;
+  --space-32px: 32px;
+  --space-48px: 48px;
+  --space-64px: 64px;
+  --space-96px: 96px;
+  --space-128px: 128px;
+  --space-192px: 192px;
+  --space-256px: 256px;
+  --space-384px: 384px;
+  --space-512px: 512px;
+  --space-640px: 640px;
+  --space-768px: 768px;
+
+  /* Text Size Template */
+  --text-size-12px: 12px;
+  --text-size-14px: 14px;
+  --text-size-16px: 16px;
+  --text-size-18px: 18px;
+  --text-size-20px: 20px;
+  --text-size-24px: 24px;
+  --text-size-30px: 30px;
+  --text-size-36px: 36px;
+  --text-size-48px: 48px;
+  --text-size-60px: 60px;
+  --text-size-72px: 72px;
+
+  /* Line Height Template */
+  --line-height-1: 1;
+  --line-height-1_25: 1.25;
+  --line-height-1_5: 1.5;
+  --line-height-2: 2;
+
+  /* Color Template */
+  /* Grays */
+  --gray-dark-1: hsl(183, 10%, 9%);
+  --gray-dark-2: hsl(183, 10%, 20%);
+  --gray-dark-3: hsl(183, 10%, 30%);
+  --gray-dark-4: hsl(183, 10%, 40%);
+  --gray-base: hsl(183, 5%, 50%);
+  --gray-light-4: hsl(183, 10%, 62%);
+  --gray-light-3: hsl(183, 10%, 75%);
+  --gray-light-2: hsl(183, 10%, 85%);
+  --gray-light-1: hsl(183, 10%, 95%);
+
+  /* Primary color #1 */
+  --red-dark-1: hsl(354, 100%, 15%);
+  --red-dark-2: hsl(354, 100%, 22%);
+  --red-dark-3: hsl(355, 100%, 27%);
+  --red-dark-4: hsl(357, 100%, 34%);
+  --red-base: hsl(0, 100%, 41.6%);
+  --red-light-4: hsl(8, 98%, 52%);
+  --red-light-3: hsl(0, 100%, 65%);
+  --red-light-2: hsl(5, 100%, 77%);
+  --red-light-1: hsl(0, 100%, 90%);
+
+  /* Primary color #2 */
+  --blue-dark-1: hsl(244, 100%, 7%);
+  --blue-dark-2: hsl(240, 100%, 12%);
+  --blue-dark-3: hsl(240, 100%, 17%);
+  --blue-dark-4: hsl(233, 100%, 22%);
+  --blue-base: hsl(240, 100%, 27%);
+  --blue-light-4: hsl(229, 100%, 43%);
+  --blue-light-3: hsl(232, 100%, 62%);
+  --blue-light-2: hsl(220, 100%, 78%);
+  --blue-light-1: hsl(215, 100%, 95%);
 }
