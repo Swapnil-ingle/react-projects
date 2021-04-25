@@ -55,7 +55,7 @@ body {
   --line-height-2: 2;
 
   /* Color Template */
-  /* Grays */
+  /* Grays (blueish) */
   --gray-dark-1: hsl(183, 10%, 9%);
   --gray-dark-2: hsl(183, 10%, 20%);
   --gray-dark-3: hsl(183, 10%, 30%);
@@ -87,4 +87,36 @@ body {
   --blue-light-3: hsl(232, 100%, 62%);
   --blue-light-2: hsl(220, 100%, 78%);
   --blue-light-1: hsl(215, 100%, 95%);
+
+  /* Box Shadows For Elevation */
+  --shadow-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-elevation-2: 0 4px 6px rgba(0, 0, 0, 0.2);
+  --shadow-elevation-3: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --shadow-elevation-4: 0 10px 24px rgba(0, 0, 0, 0.2);
+  --shadow-elevation-5: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+  /* Multiple Box-Shadows For Elevation */
+  /* INFO: The author prefer these rather than plain shadows, as there are multiple lightsources in
+  a real-time scenario */
+  --shadow-mul-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-mul-elevation-2: 0 3px 6px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.12);
+  --shadow-mul-elevation-3: 0 10px 20px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.1);
+  --shadow-mul-elevation-4: 0 15px 25px rgba(0, 0, 0, 0.15),
+    0 5px 10px rgba(0, 0, 0, 0.05);
+  --shadow-mul-elevation-5: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+  /* Inset Box-Shadow */
+  --shadow-inset-depth: inset 0px 2px 2px rgba(0, 0, 0, 0.12),
+    inset 0 -2px 0 rgba(255, 255, 255, 0.7);
+
+  /* Icon Size */
+  --icon-size-smallest: 12px;
+  --icon-size-base: 16px;
+  --icon-size-big: 24px;
+  --icon-size-bigger: 32px;
+
+  /* Feel free to add anymore low-level design decision template values */
 }
